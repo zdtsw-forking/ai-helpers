@@ -46,6 +46,9 @@ CVE Remediation:
   - cve-verify
   - cve-vex-assess
 
+ODH Release:
+  - odh-release
+
 Team Management:
   - team-weekly-report
   - engineer-snapshot

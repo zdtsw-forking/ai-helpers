@@ -1,0 +1,91 @@
+# Stable component registry for ODH release automation.
+# Maps component short names to their upstream, ODH, Konflux, and Quay details.
+#
+# Per-release values (version, branch name) are passed as skill arguments.
+
+components:
+  inference-router:
+    upstream:
+      org: llm-d
+      repo: llm-d-router
+      default_branch: main
+    odh:
+      org: opendatahub-io
+      repo: llm-d-inference-scheduler
+      default_branch: main
+    konflux:
+      central_repo: opendatahub-io/odh-konflux-central
+      onboarder_workflow: odh-konflux-release-onboarder.yml
+      components:
+        - llm-d-inference-scheduler
+        - llm-d-routing-sidecar
+    quay:
+      org: opendatahub
+      images:
+        - llm-d-inference-scheduler
+        - llm-d-routing-sidecar
+
+  kv-cache:
+    upstream:
+      org: llm-d
+      repo: llm-d-kv-cache
+      default_branch: main
+    odh:
+      org: opendatahub-io
+      repo: llm-d-kv-cache
+      default_branch: main
+    konflux:
+      central_repo: opendatahub-io/odh-konflux-central
+      onboarder_workflow: odh-konflux-release-onboarder.yml
+      components:
+        - llm-d-kv-cache
+    quay:
+      org: opendatahub
+      images:
+        - llm-d-kv-cache
+
+  workload-variant-autoscaler:
+    upstream:
+      org: llm-d
+      repo: llm-d-workload-variant-autoscaler
+      default_branch: main
+    odh:
+      org: opendatahub-io
+      repo: workload-variant-autoscaler
+      default_branch: main
+    konflux:
+      central_repo: opendatahub-io/odh-konflux-central
+      onboarder_workflow: odh-konflux-release-onboarder.yml
+      components:
+        - odh-workload-variant-autoscaler-controller
+    quay:
+      org: opendatahub
+      images:
+        - workload-variant-autoscaler
+
+  batch-gateway:
+    upstream:
+      org: llm-d-incubation
+      repo: batch-gateway
+      default_branch: main
+    odh:
+      org: opendatahub-io
+      repo: batch-gateway
+      default_branch: main
+    konflux:
+      central_repo: opendatahub-io/odh-konflux-central
+      onboarder_workflow: odh-konflux-release-onboarder.yml
+      components:
+        - batch-gateway-apiserver
+        - batch-gateway-processor
+    quay:
+      org: opendatahub
+      images:
+        - batch-gateway-apiserver
+        - batch-gateway-processor
+
+# KServe metadata target (cross-component, used by generate-kserve-snippet)
+kserve:
+  metadata_repo: opendatahub-io/kserve
+  metadata_file: config/component_metadata.yaml
+  metadata_branch: master

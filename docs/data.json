@@ -23,6 +23,9 @@
     "cve remediation": {
       "name": "CVE Remediation"
     },
+    "odh release": {
+      "name": "ODH Release"
+    },
     "team management": {
       "name": "Team Management"
     }
@@ -359,6 +362,14 @@
         "file_path": "helpers/skills/oci-cve-checker/SKILL.md",
         "id": "oci-cve-checker",
         "allowed_tools": "Bash Read"
+      },
+      {
+        "name": "odh-release",
+        "description": "Automate per-component ODH release steps on code freeze day: create release branch, run Konflux release onboarder GitHub Action, verify Quay images, and generate KServe component_metadata snippet. Use when asked to cut an ODH release, run release steps, or prepare a component for ODH code freeze.",
+        "category": "odh release",
+        "file_path": "helpers/skills/odh-release/SKILL.md",
+        "id": "odh-release",
+        "allowed_tools": "Bash Read WebFetch"
       },
       {
         "name": "pr-jira-linker",
