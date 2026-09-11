@@ -125,6 +125,14 @@
         "file_path": "plugins/odh-jira/skills/ai-bug-fix-triage/SKILL.md"
       },
       {
+        "name": "ai-gateway-operator-manifest-update",
+        "id": "ai-gateway-operator-manifest-update",
+        "description": "Update batch-gateway manifests in opendatahub-io/ai-gateway-operator when the pinned llm-d-batch-gateway-operator main commit changes.",
+        "category": "odh-llm-d",
+        "allowed_tools": "",
+        "file_path": "plugins/odh-llm-d/skills/ai-gateway-operator-manifest-update/SKILL.md"
+      },
+      {
         "name": "aipcc-commit-suggest",
         "id": "aipcc-commit-suggest",
         "description": "Generate AIPCC Commits style commit messages or summarize existing commits",
