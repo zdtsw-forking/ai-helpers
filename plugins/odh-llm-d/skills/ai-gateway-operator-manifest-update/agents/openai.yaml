@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Gateway Operator Manifest Update"
+  short_description: "Update batch-gateway manifests in ai-gateway-operator"
+  default_prompt: "Check the latest batch-gateway-operator commit and update ai-gateway-operator manifests when needed."
